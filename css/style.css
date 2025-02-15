@@ -2,21 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
 body {
-    background: #222;
-    /* cor fundo */
-    color: #d2d2d2;
-    /* cor texto */
+    background: #222; /* cor fundo */
+    color: #d2d2d2; /* cor texto */
 }
 
 i {
     color: rgb(236, 238, 123);
-    font-size: 20px;
-    /* tamanho do texto */
+    font-size: 20px; /* tamanho do texto */
 }
 
 #header {
@@ -24,21 +19,19 @@ i {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100;
+    width: 100%; /* adicionado % para definir a largura total */
     height: 70px;
     background: #0c1f36;
     padding: 1px 16px 20px 25px;
     z-index: 2;
-
 }
 
 .menu {
     display: flex;
     align-items: center;
     background: #222; /* cor fundo */
-    gap: 20px;
+    gap: 15px;
     list-style: none;
-
 }
 
 .menu-item { 
@@ -47,12 +40,51 @@ i {
 
 .menu-link { 
     display: flex;
-    text-decoration: ;
+    text-decoration: none;
 }
 
 .menu-texto { 
     font-size: 20px;
     text-transform: uppercase;
-
-
 }
+
+.menu-mobile .menu-link {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 15px;
+}
+
+.menu-link.active .menu-icone,
+.menu-link.active .menu-texto,
+.menu-link:hover .menu-icone, /* corrigido pseudo-classe hover */
+.menu-link:hover .menu-texto { /* corrigido pseudo-classe hover */
+    color: white;
+    font-weight: 800;
+}
+
+.menu-icone,
+.menu-texto {
+    color: #797979;
+    font-weight: 400;
+}    
+
+.menu-icone {
+    font-size: 25px;
+}
+@media (min-width: 768px) { /* a partir de: 768px */
+    #header {
+        position: fixed;
+        border-bottom: 1px solid #f3f3f3;
+    }
+.menu-principal {
+    gap: 20px;
+}
+
+.header-nav {
+    display: none;
+}
+@media (min-width: 768px) { /* a partir de: 768px */
+    #header {
+        position: fixed;
+        border-bottom: 1px solid #f3f3f3;
+    }
