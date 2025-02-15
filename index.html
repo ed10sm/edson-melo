@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edson de Melo | Portfólio</title>
 
-    <link rel="stylesheet" href="style.css" 
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,29 +16,36 @@
 
     <!-- MENU -->
     <header id="header">
-        <nav>
-            <ul> <!-- lista nao ordenada -->
-                <li> Home </li>
-                <li> Projetos </li>
-                <li> Sobre </li>
-                <li> Contato </li>
+        <nav class= "header-nav" >
+            <ul class="menu menu-principal"> <!-- lista não ordenada -->
+                <li class="menu-item">
+                    <a href="#home">
+                        <span class=" menu-texto"> Home </span>
+                    </a>
+                    
+                </li>
+                <li class="menu-item">
+                    <a href="#projetos">
+                        <span class=" menu-texto"> projetos </span>
+                        <li class="menu-item">
+                            <a href="#sobre">
+                                <span class=" menu-texto"> sobre </span>
+                                <li class="menu-item">
+                                    <a href="#contato">
+                                        <span class=" menu-texto"> contato </span>
             </ul>
         </nav>
         <!-- logo -->
         <div>
             <a href="#home">
-
                 <img src="" alt="">
-
             </a>
         </div>
 
         <!-- trocar cor tema -->
-        <div> class="header-toggle">
-            <i id="toggltheme bi bi-sun" class="bi bi sun"></i>
+        <div class="header-toggle">
+            <i id="toggltheme" class="bi bi-sun"></i>
         </div>
-
-
     </header>
     <!-- FIM MENU -->
 
