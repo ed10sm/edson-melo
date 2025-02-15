@@ -1,3 +1,4 @@
+/* reset css */
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +7,11 @@
 
 body {
     background: #222; /* cor fundo */
-    color: #d2d2d2; /* cor texto */
+    color: #d2d2d2;  /* cor texto */
 }
 
 i {
-    color: rgb(236, 238, 123);
+    color: aqua;
     font-size: 20px; /* tamanho do texto */
 }
 
@@ -19,23 +20,31 @@ i {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* adicionado % para definir a largura total */
-    height: 70px;
-    background: #0c1f36;
-    padding: 1px 16px 20px 25px;
+    width: 100%;
+    background: #222;
+    padding: 8px 16px;
     z-index: 2;
 }
 
-.menu {
+.menu { 
     display: flex;
     align-items: center;
     background: #222; /* cor fundo */
-    gap: 15px;
+    gap: 25px;
     list-style: none;
 }
 
-.menu-item { 
-    width: 100%;
+.menu-mobile {
+    width: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border-top: 1px;
+
+}
+
+.menu-item {
+    width: 100px;
 }
 
 .menu-link { 
@@ -43,7 +52,7 @@ i {
     text-decoration: none;
 }
 
-.menu-texto { 
+.menu-texto {
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -51,31 +60,34 @@ i {
 .menu-mobile .menu-link {
     flex-direction: column;
     justify-content: center;
-    padding: 10px 15px;
+    padding: 7px 15px;
+
 }
 
 .menu-link.active .menu-icone,
 .menu-link.active .menu-texto,
-.menu-link:hover .menu-icone, /* corrigido pseudo-classe hover */
-.menu-link:hover .menu-texto { /* corrigido pseudo-classe hover */
-    color: white;
+.menu-link:hover .menu-icone,
+.menu-link:hover .menu-texto{
+    color: #f3f3f3;
     font-weight: 800;
 }
 
+/* não selecionados */
 .menu-icone,
-.menu-texto {
+.menu-texto{ 
     color: #797979;
     font-weight: 400;
-}    
+}
+
+/* .menu-link .menu-texto:hover,
+.menu-link .menu-icone:hover {
+    font-size: 22px;
+} */
 
 .menu-icone {
     font-size: 25px;
 }
-@media (min-width: 768px) { /* a partir de: 768px */
-    #header {
-        position: fixed;
-        border-bottom: 1px solid #f3f3f3;
-    }
+
 .menu-principal {
     gap: 20px;
 }
@@ -83,8 +95,60 @@ i {
 .header-nav {
     display: none;
 }
-@media (min-width: 768px) { /* a partir de: 768px */
+
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+/* ATUALIZAÇÕES FUTURAS */
+#HOME {
+    padding: 32px 16px;
+}
+
+
+/* CSS Responsivo */
+@media (min-width: 768px) {  /* a partir de: 768px */
     #header {
         position: fixed;
         border-bottom: 1px solid #f3f3f3;
+        padding: 16px 80px;
+        background: #222;
     }
+    .nav-mobile {
+        display: none;
+    }
+    .header-nav {
+        display: flex;
+    }
+    #home {
+        padding: 128px 96px 64px;
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 1200px */
+@media (min-width: 1200px) {
+    #home {
+        padding: 160px 96px 32px;
+    }
+}
+@media (min-width: 1400px) {
+    /* #header {
+        padding: 192px 240px 64px;
+    } */
+
+}
