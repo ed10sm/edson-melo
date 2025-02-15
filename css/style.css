@@ -131,7 +131,7 @@ i {
         display: flex;
     }
     #home {
-        padding: 128px 96px 64px;
+        padding: 128px 96px 64px 96px;
     }
     .main-content {
         display: flex;
