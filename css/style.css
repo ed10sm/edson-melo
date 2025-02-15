@@ -1,17 +1,43 @@
+/* defini cores temas dark */
+:root,
+:root[data-theme="dark"] {
+
+    --bg-header: #222;
+    --icone-tema:#eeeeee;
+
+    --bg-header: #222;
+    --icone-tema: #eeeeee;
+
+}
+
+/* defini cores temas light */
+:root[data-theme="light"] {
+
+    --bg-header: #fff;
+    --icone-tema: #121212;
+
+}
+
+
+
 /* reset css */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #222; /* cor fundo */
+    background: var(--bg-header); /* cor fundo */
     color: #d2d2d2;  /* cor texto */
 }
 
+h1 {
+    font-size: 50px;
+}
+
 i {
-    color: aqua;
+    color: rgb(154, 221, 221);
     font-size: 20px; /* tamanho do texto */
 }
 
@@ -21,7 +47,7 @@ i {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: #222;
+    background:var(--bg-header);
     padding: 8px 16px;
     z-index: 2;
 }
@@ -29,22 +55,21 @@ i {
 .menu { 
     display: flex;
     align-items: center;
-    background: #222; /* cor fundo */
+    background: var(--bg-header); /* cor fundo */
     gap: 25px;
     list-style: none;
 }
 
 .menu-mobile {
-    width: flex;
+    width: 100;
     position: fixed;
     bottom: 0;
     justify-content: space-between;
-    border-top: 1px;
-
+    border-top: 1px; 
 }
 
 .menu-item {
-    width: 100px;
+    width: 100%;
 }
 
 .menu-link { 
@@ -95,25 +120,32 @@ i {
 .header-nav {
     display: none;
 }
+#toggleTheme {
+    font-size: 24px;
+    color: var(--icone-tema);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
 
 #home {
     display: flex;
     flex-direction: column;
     gap: 32px;
-
+    
 }
 
-.main-content {
+.main-content{
     display: flex;
     flex-direction: column;
     gap: 25px;
 
 }
 
-/* ATUALIZAÇÕES FUTURAS */
-#HOME {
+#home {
     padding: 32px 16px;
 }
+
+
 
 
 /* CSS Responsivo */
@@ -122,7 +154,7 @@ i {
         position: fixed;
         border-bottom: 1px solid #f3f3f3;
         padding: 16px 80px;
-        background: #222;
+        background: var(--bg-header);
     }
     .nav-mobile {
         display: none;
@@ -131,7 +163,8 @@ i {
         display: flex;
     }
     #home {
-        padding: 128px 96px 64px 96px;
+        padding: 128px 96px 64px 96px; /* VOLTA AQUI */
+
     }
     .main-content {
         display: flex;
@@ -146,9 +179,11 @@ i {
         padding: 160px 96px 32px;
     }
 }
-@media (min-width: 1400px) {
-    /* #header {
-        padding: 192px 240px 64px;
-    } */
+@media (min-width: 1400px) 
+
+
+
+
+{
 
 }
