@@ -1,44 +1,100 @@
-/* defini cores temas dark */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Monomakh&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shafarik&display=swap');
+
+
 :root,
 :root[data-theme="dark"] {
 
-    --bg-header: #222;
-    --icone-tema:#eeeeee;
+    --bg-body: #222;
+    --cor-texto: #eee;
 
     --bg-header: #222;
     --icone-tema: #eeeeee;
 
+    --cor-borda: #eee;
+
+    --cor-txt-menu: #eee;
+    --txt-menu-hover: #eee;
+
+    --texto-opaco: #ffffff;
+
+    --btn: #eee;
+    --hover: #ffffff ; 
 }
 
-/* defini cores temas light */
+/* Definir cores tema Light */
 :root[data-theme="light"] {
 
-    --bg-header: #fff;
-    --icone-tema: #121212;
+    --bg-body: #ffffff;
+    --cor-texto: #222;
 
+    --bg-header: #ffffff;
+    --icone-tema: #222;
+
+    --cor-borda: #222;
+
+    --cor-txt-menu: #222;
+    --txt-menu-hover: #222;
+
+    --texto-opaco: #ffffff;
+
+    --btn: #222;
+    --hover: #747474;
 }
 
-
-
 /* reset css */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html[data-theme='light'] .logo {
+    filter: invert(1);
+    
+}
+
+html
+    
+
+
 body {
-    background: var(--bg-header); /* cor fundo */
-    color: #d2d2d2;  /* cor texto */
+    background: var(--bg-body); /* cor fundo */
+    color: var(--cor-texto);  /* cor texto */
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: 200;
+    font-family: "Atkinson Hyperlegible Next", serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Roboto" , serif;
+    text-align: center;
+    text-shadow: 1px 1px 5px whitesmoke;
+
+}
+p{
+    font-size: 30px;
+    font-weight: 200;
+    font-family: "Atkinson Hyperlegible Next", serif;
+    letter-spacing: 1px;
+
 }
 
 i {
-    color: rgb(154, 221, 221);
+    color: #026386;
     font-size: 20px; /* tamanho do texto */
+}
+
+.frase {
+    font-size: 30px;
+    font-weight: 300;
+
 }
 
 #header {
@@ -47,25 +103,31 @@ i {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background:var(--bg-header);
+    /* background: var(--bg-header); */
     padding: 8px 16px;
     z-index: 2;
+}
+
+.header-logo .logo {
+    width: 10.2rem;
+    height: 6.0rem;
+
 }
 
 .menu { 
     display: flex;
     align-items: center;
-    background: var(--bg-header); /* cor fundo */
+    background: var(--bg-body); /* cor fundo */
     gap: 25px;
     list-style: none;
 }
 
-.menu-mobile {
-    width: 100;
+.menu-mobile {  /* < nav > */
+    width: 100vw;  /* viewport width */
     position: fixed;
     bottom: 0;
     justify-content: space-between;
-    border-top: 1px; 
+    border-top: 1px solid #f3f3f3;
 }
 
 .menu-item {
@@ -82,25 +144,27 @@ i {
     text-transform: uppercase;
 }
 
+
+
 .menu-mobile .menu-link {
     flex-direction: column;
     justify-content: center;
     padding: 7px 15px;
-
 }
 
 .menu-link.active .menu-icone,
 .menu-link.active .menu-texto,
 .menu-link:hover .menu-icone,
 .menu-link:hover .menu-texto{
-    color: #f3f3f3;
+    color: var(--txt-menu-hover);
     font-weight: 800;
+
 }
 
 /* não selecionados */
 .menu-icone,
 .menu-texto{ 
-    color: #797979;
+    color: var(--cor-txt-menu);
     font-weight: 400;
 }
 
@@ -120,31 +184,153 @@ i {
 .header-nav {
     display: none;
 }
+
 #toggleTheme {
-    font-size: 24px;
+    font-size: 20px;
     color: var(--icone-tema);
+    /* color: red; */
     cursor: pointer;
-    transition: ease-in-out .4s;
+    transition: ease-in-out .6s;
 }
 
+/* Home */
 #home {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    
 }
 
-.main-content{
+.main-content {
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+
+/* btn */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--btn);
+}
+
+.btn-primary {
+    border: 1px solid var(--btn);
+}
+
+.btn span {
+    color: var(--btn);
+    font-size: 18px;
+    text-transform: uppercase;
 
 }
 
-#home {
+.btn i {
+    font-size: 18px;
+
+}
+.btn:hover{
+    transform: scale(1.1);
+    transform: ease-in-out 4s;
+}
+.btn:hover span {
+    color: var(--txt-menu-hover);
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+/* ATUALIZAÇOES FUTURAS */
+#home, .projetos, .sobre, .contato {
     padding: 32px 16px;
 }
 
+
+/* projetos */
+.projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.projeto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgb(234, 234, 234);
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.card-title {
+    font-family: "roboto" serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card-discription {
+    font-family: "Roboto", serif;
+    font-size: 18px;
+    font-weight: lighter;
+
+}
+
+.card-lista {
+    /* UL */
+    list-style: none;
+    font-size: 15px;
+    margin-left: 15px;
+
+}
+
+.icone-seta {
+    color: cyan;
+    font-size: 14px;
+}
+
+.card-item {  /* Li */
+    margin-left: 10px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
 
 
 
@@ -163,8 +349,7 @@ i {
         display: flex;
     }
     #home {
-        padding: 128px 96px 64px 96px; /* VOLTA AQUI */
-
+        padding: 128px 96px 64px 96px; /* VOLTAR AQUI */
     }
     .main-content {
         display: flex;
@@ -173,17 +358,24 @@ i {
     }
 }
 
+/* 992px */
+@media (min-width: 992px) {
+
+    .projeto-card {
+        flex-direction: row;
+    }
+    .card-img {
+        width: 55%;
+    }
+}
 /* 1200px */
 @media (min-width: 1200px) {
     #home {
         padding: 160px 96px 32px;
     }
 }
-@media (min-width: 1400px) 
-
-
-
-
-{
-
+@media (min-width: 1400px) {
+    /* #header {
+        padding: 192px 240px 64px;
+    } */
 }
