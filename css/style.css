@@ -616,11 +616,11 @@ footer a:hover {
         display: flex;
     }
 
-    /* ATT */
-    /* .header-nav,
+    
+   .header-nav,
     .header-toggle {
         min-width: 30%;
-    } */
+    
 
     #home,
     .projetos,
@@ -798,5 +798,4 @@ footer a:hover {
     opacity: 1;
 }
 
-
-/*  */
+}
